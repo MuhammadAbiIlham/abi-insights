@@ -27,7 +27,7 @@ const Footer = () => {
               <Mail className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com/in/muhammad-abi-ilham"
+              href="https://www.linkedin.com/in/muhammad-abi-ilham-582a9127a"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-all duration-300"
@@ -47,12 +47,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-primary-foreground/10 mt-8 pt-8 text-center">
-          <p className="text-primary-foreground/60 text-sm flex items-center justify-center gap-1">
-            Made with <Heart className="w-4 h-4 text-accent fill-accent" /> using React & Tailwind CSS
-          </p>
-        </div>
       </div>
     </footer>
   );

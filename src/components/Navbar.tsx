@@ -74,7 +74,7 @@ const Navbar = () => {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com/in/muhammad-abi-ilham"
+              href="https://www.linkedin.com/in/muhammad-abi-ilham-582a9127a"
               target="_blank"
               rel="noopener noreferrer"
               className="text-foreground/70 hover:text-accent transition-colors"

@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useInView } from "@/hooks/useInView";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
+
 
 const contactInfo = [
   {
@@ -17,7 +19,7 @@ const contactInfo = [
     icon: Linkedin,
     label: "LinkedIn",
     value: "Muhammad Abi Ilham",
-    href: "https://linkedin.com/in/muhammad-abi-ilham",
+    href: "https://www.linkedin.com/in/muhammad-abi-ilham-582a9127a",
   },
   {
     icon: Github,
@@ -41,15 +43,44 @@ const ContactSection = () => {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", message: "" });
-  };
+  e.preventDefault();
+  if (loading) return;
+
+  setLoading(true);
+
+  emailjs
+    .send(
+      "service_jcn9mbb",
+      "template_t0imerh",
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        reply_to: formData.email,
+      },
+      "pQIOx35sXQI8vzZWN"
+    )
+    .then(() => {
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", message: "" });
+    })
+    .catch(() => {
+      toast({
+        title: "Failed",
+        description: "Email failed to send.",
+      });
+    })
+    .finally(() => setLoading(false));
+};
+
+
 
   return (
     <section id="contact" className="py-20 md:py-32 bg-cream" ref={ref}>
@@ -187,12 +218,23 @@ const ContactSection = () => {
                 </div>
 
                 <Button
-                  type="submit"
-                  className="w-full bg-accent hover:bg-gold-dark text-accent-foreground font-semibold shadow-gold transition-all duration-300 hover:scale-[1.02]"
-                >
-                  <Send className="w-4 h-4 mr-2" />
-                  Send Message
-                </Button>
+  type="submit"
+  disabled={loading}
+  className="w-full bg-accent hover:bg-gold-dark disabled:opacity-60 disabled:pointer-events-none"
+>
+  {loading ? (
+    <>
+      <svg className="w-4 h-4 mr-2 animate-spin" viewBox="0 0 24 24" />
+      Sending...
+    </>
+  ) : (
+    <>
+      <Send className="w-4 h-4 mr-2" />
+      Send Message
+    </>
+  )}
+</Button>
+
               </form>
             </div>
           </div>

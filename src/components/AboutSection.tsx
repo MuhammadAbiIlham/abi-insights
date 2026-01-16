@@ -1,5 +1,6 @@
 import { User, Code, Brain, BarChart3 } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
+import ProfilPitcure from "../assets/profil_picture.jpg";
 
 const highlights = [
   { icon: Code, label: "Python Developer" },
@@ -27,7 +28,7 @@ const AboutSection = () => {
               
               {/* Profile Image */}
               <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-strong bg-gradient-to-br from-muted to-secondary flex items-center justify-center">
-                <User className="w-32 h-32 text-muted-foreground/50" />
+                <img alt="Profil Picture" src={ProfilPitcure} />
               </div>
             </div>
           </div>
