@@ -9,7 +9,7 @@ const projects = [
       "Deep learning research comparing BART, T5, and GPT-2 models for abstractive podcast summarization using PyTorch. Implemented 5-fold cross validation for robust model evaluation.",
     technologies: ["Python", "Google Colab", "PyTorch", "Transformers"],
     course: "Deep Learning",
-    github: "https://github.com/MuhammadAbiIlham/podcast-summarization",
+    github: "https://github.com/MuhammadAbiIlham/abstractive-summarization",
     color: "from-blue-500/20 to-purple-500/20",
   },
   {
@@ -18,7 +18,7 @@ const projects = [
       "Developed a multi-task transformer-based model for Named Entity Recognition (NER) and emotion classification on Indonesian Wayang narrative texts.",
     technologies: ["Python", "Transformers", "NLP", "PyTorch"],
     course: "Natural Language Processing",
-    github: "https://github.com/MuhammadAbiIlham/wayang-ner-emotion",
+    github: "https://github.com/MuhammadAbiIlham/named-entity-recognition",
     color: "from-green-500/20 to-teal-500/20",
   },
   {
@@ -27,7 +27,7 @@ const projects = [
       "Object-oriented parking lot management system implementation using C++ with greedy algorithm approach for optimal space allocation.",
     technologies: ["C++", "OOP", "Greedy Algorithm"],
     course: "Advanced Programming",
-    github: "https://github.com/MuhammadAbiIlham/parking-management-cpp",
+    github: "https://github.com/MuhammadAbiIlham/parking-management-system",
     color: "from-orange-500/20 to-red-500/20",
   },
 ];
